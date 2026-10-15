@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative Magento Admin support ticket grid</title>
+  <desc id="desc">A mockup of an admin dashboard with support ticket rows and status and priority filters.</desc>
+  <rect width="1200" height="700" fill="#f4f4f4"/>
+  <rect width="1200" height="56" fill="#242526"/>
+  <text x="25" y="36" fill="#fff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Magento Admin</text>
+  <text x="1050" y="35" fill="#ddd" font-family="Arial, sans-serif" font-size="13">Store View  ▾</text>
+  <rect y="56" width="210" height="644" fill="#2d2e30"/>
+  <text x="24" y="100" fill="#bbb" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">MENU</text>
+  <text x="24" y="148" fill="#eee" font-family="Arial, sans-serif" font-size="15">Dashboard</text>
+  <text x="24" y="192" fill="#eee" font-family="Arial, sans-serif" font-size="15">Sales</text>
+  <text x="24" y="236" fill="#eee" font-family="Arial, sans-serif" font-size="15">Catalog</text>
+  <text x="24" y="280" fill="#eee" font-family="Arial, sans-serif" font-size="15">Customers</text>
+  <rect x="0" y="302" width="210" height="44" fill="#514943"/>
+  <rect x="0" y="302" width="4" height="44" fill="#eb5202"/>
+  <text x="24" y="330" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="700">Support Tickets</text>
+  <text x="24" y="388" fill="#eee" font-family="Arial, sans-serif" font-size="15">Marketing</text>
+  <text x="242" y="103" fill="#303030" font-family="Arial, sans-serif" font-size="13">Marketing / Support Tickets</text>
+  <text x="242" y="150" fill="#303030" font-family="Arial, sans-serif" font-size="28" font-weight="700">Support Tickets</text>
+  <rect x="1011" y="124" width="150" height="42" rx="2" fill="#eb5202"/>
+  <text x="1086" y="150" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="700">Export ▾</text>
+  <rect x="240" y="186" width="920" height="462" fill="#fff" stroke="#d6d6d6"/>
+  <rect x="240" y="186" width="920" height="58" fill="#fafafa"/>
+  <text x="266" y="221" fill="#303030" font-family="Arial, sans-serif" font-size="17" font-weight="700">Ticket Queue</text>
+  <rect x="958" y="199" width="178" height="32" rx="2" fill="#fff" stroke="#adadad"/>
+  <text x="973" y="220" fill="#777" font-family="Arial, sans-serif" font-size="12">Search by subject...</text>
+  <rect x="258" y="260" width="884" height="42" fill="#f5f5f5"/>
+  <text x="275" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">TICKET</text>
+  <text x="380" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">SUBJECT</text>
+  <text x="647" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">ORDER</text>
+  <text x="735" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">STATUS  ▾</text>
+  <text x="875" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">PRIORITY  ▾</text>
+  <text x="1010" y="286" fill="#555" font-family="Arial, sans-serif" font-size="12" font-weight="700">CREATED</text>
+  <g font-family="Arial, sans-serif" font-size="13">
+    <rect x="258" y="302" width="884" height="64" fill="#fff"/>
+    <text x="275" y="339" fill="#444">#1042</text><text x="380" y="339" fill="#333">Delivery estimate for order</text><text x="647" y="339" fill="#444">#800012</text>
+    <rect x="735" y="322" width="86" height="24" rx="12" fill="#e8f2ff"/><text x="778" y="338" text-anchor="middle" fill="#1769aa" font-size="11">In Progress</text>
+    <rect x="875" y="322" width="56" height="24" rx="12" fill="#fff1dc"/><text x="903" y="338" text-anchor="middle" fill="#a85d00" font-size="11">High</text><text x="1010" y="339" fill="#666">Oct 15, 2026</text>
+    <line x1="258" y1="366" x2="1142" y2="366" stroke="#e5e5e5"/>
+    <rect x="258" y="367" width="884" height="64" fill="#fff"/>
+    <text x="275" y="404" fill="#444">#1041</text><text x="380" y="404" fill="#333">Item arrived damaged</text><text x="647" y="404" fill="#444">#800008</text>
+    <rect x="735" y="387" width="54" height="24" rx="12" fill="#fff0ed"/><text x="762" y="403" text-anchor="middle" fill="#c0392b" font-size="11">Open</text>
+    <rect x="875" y="387" width="65" height="24" rx="12" fill="#fde8e7"/><text x="907" y="403" text-anchor="middle" fill="#b42318" font-size="11">Urgent</text><text x="1010" y="404" fill="#666">Oct 15, 2026</text>
+    <line x1="258" y1="431" x2="1142" y2="431" stroke="#e5e5e5"/>
+    <rect x="258" y="432" width="884" height="64" fill="#fff"/>
+    <text x="275" y="469" fill="#444">#1040</text><text x="380" y="469" fill="#333">Update shipping address</text><text x="647" y="469" fill="#444">#799991</text>
+    <rect x="735" y="452" width="54" height="24" rx="12" fill="#f0f0f0"/><text x="762" y="468" text-anchor="middle" fill="#555" font-size="11">Closed</text>
+    <rect x="875" y="452" width="58" height="24" rx="12" fill="#e9f6ec"/><text x="904" y="468" text-anchor="middle" fill="#287d3c" font-size="11">Normal</text><text x="1010" y="469" fill="#666">Oct 14, 2026</text>
+    <line x1="258" y1="496" x2="1142" y2="496" stroke="#e5e5e5"/>
+    <rect x="258" y="497" width="884" height="64" fill="#fff"/>
+    <text x="275" y="534" fill="#444">#1039</text><text x="380" y="534" fill="#333">Refund status request</text><text x="647" y="534" fill="#444">#799978</text>
+    <rect x="735" y="517" width="61" height="24" rx="12" fill="#eaf5ea"/><text x="765" y="533" text-anchor="middle" fill="#287d3c" font-size="11">Resolved</text>
+    <rect x="875" y="517" width="58" height="24" rx="12" fill="#e9f6ec"/><text x="904" y="533" text-anchor="middle" fill="#287d3c" font-size="11">Normal</text><text x="1010" y="534" fill="#666">Oct 13, 2026</text>
+    <line x1="258" y1="561" x2="1142" y2="561" stroke="#e5e5e5"/>
+  </g>
+  <text x="270" y="612" fill="#666" font-family="Arial, sans-serif" font-size="12">20 per page</text>
+  <text x="1000" y="612" fill="#666" font-family="Arial, sans-serif" font-size="12">1–4 of 4 tickets</text>
+  <text x="600" y="681" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">ILLUSTRATIVE UI MOCKUP — NOT A LIVE MAGENTO SCREENSHOT</text>
+</svg>

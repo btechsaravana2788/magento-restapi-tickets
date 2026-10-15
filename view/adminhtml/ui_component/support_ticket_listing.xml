@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">support_ticket_listing.support_ticket_listing_data_source</item>
+            <item name="deps" xsi:type="string">support_ticket_listing.support_ticket_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">ticket_columns</item>
+    </argument>
+    <dataSource name="support_ticket_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">support_ticket_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">ticket_id</argument>
+            <argument name="requestFieldName" xsi:type="string">ticket_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">ticket_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="ticket_columns">
+        <column name="ticket_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Ticket ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="subject">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Subject</label>
+            </settings>
+        </column>
+        <column name="order_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Order ID</label>
+            </settings>
+        </column>
+        <column name="customer_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Customer ID</label>
+            </settings>
+        </column>
+        <column name="status">
+            <settings>
+                <options>
+                    <option name="open" xsi:type="array">
+                        <item name="value" xsi:type="string">open</item>
+                        <item name="label" xsi:type="string" translate="true">Open</item>
+                    </option>
+                    <option name="in_progress" xsi:type="array">
+                        <item name="value" xsi:type="string">in_progress</item>
+                        <item name="label" xsi:type="string" translate="true">In Progress</item>
+                    </option>
+                    <option name="resolved" xsi:type="array">
+                        <item name="value" xsi:type="string">resolved</item>
+                        <item name="label" xsi:type="string" translate="true">Resolved</item>
+                    </option>
+                    <option name="closed" xsi:type="array">
+                        <item name="value" xsi:type="string">closed</item>
+                        <item name="label" xsi:type="string" translate="true">Closed</item>
+                    </option>
+                </options>
+                <filter>select</filter>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="priority">
+            <settings>
+                <options>
+                    <option name="low" xsi:type="array">
+                        <item name="value" xsi:type="string">low</item>
+                        <item name="label" xsi:type="string" translate="true">Low</item>
+                    </option>
+                    <option name="normal" xsi:type="array">
+                        <item name="value" xsi:type="string">normal</item>
+                        <item name="label" xsi:type="string" translate="true">Normal</item>
+                    </option>
+                    <option name="high" xsi:type="array">
+                        <item name="value" xsi:type="string">high</item>
+                        <item name="label" xsi:type="string" translate="true">High</item>
+                    </option>
+                    <option name="urgent" xsi:type="array">
+                        <item name="value" xsi:type="string">urgent</item>
+                        <item name="label" xsi:type="string" translate="true">Urgent</item>
+                    </option>
+                </options>
+                <filter>select</filter>
+                <label translate="true">Priority</label>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Created</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="MagentoTickets\SupportTicketApi\Ui\Component\Listing\Column\TicketActions">
+            <settings>
+                <indexField>ticket_id</indexField>
+                <label translate="true">Actions</label>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

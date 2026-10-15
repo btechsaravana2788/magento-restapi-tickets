@@ -1,0 +1,11 @@
+<!--@subject {{trans "A reply was added to support ticket #%ticket_id" ticket_id=$ticket_id}} @-->
+<!--@vars {
+"var ticket_id":"Ticket ID",
+"var ticket_subject":"Ticket subject",
+"var message":"Staff reply"
+} @-->
+{{template config_path="design/email/header_template"}}
+<p>{{trans "A staff member replied to your support ticket #%ticket_id." ticket_id=$ticket_id}}</p>
+<p><strong>{{var ticket_subject|escape}}</strong></p>
+<p>{{var message|escape|nl2br}}</p>
+{{template config_path="design/email/footer_template"}}

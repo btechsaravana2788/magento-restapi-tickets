@@ -1,0 +1,90 @@
+<?php
+/** @var \MagentoTickets\SupportTicketApi\Block\Adminhtml\Ticket\View $block */
+$ticket = $block->getTicket();
+$nextStatus = $block->getNextStatus();
+?>
+<div class="admin__page-section">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $escaper->escapeHtml(__('Ticket #%1', $ticket->getId())) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <p><strong><?= $escaper->escapeHtml(__('Subject')) ?>:</strong>
+            <?= $escaper->escapeHtml($ticket->getData('subject')) ?></p>
+        <p><strong><?= $escaper->escapeHtml(__('Order ID')) ?>:</strong>
+            <?= $escaper->escapeHtml($ticket->getData('order_id')) ?></p>
+        <p><strong><?= $escaper->escapeHtml(__('Customer ID')) ?>:</strong>
+            <?= $escaper->escapeHtml($ticket->getData('customer_id')) ?></p>
+        <p><strong><?= $escaper->escapeHtml(__('Priority')) ?>:</strong>
+            <?= $escaper->escapeHtml(ucfirst((string)$ticket->getData('priority'))) ?></p>
+        <p><strong><?= $escaper->escapeHtml(__('Status')) ?>:</strong>
+            <?= $escaper->escapeHtml(ucwords(str_replace('_', ' ', (string)$ticket->getData('status')))) ?></p>
+    </div>
+</div>
+
+<div class="admin__page-section">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $escaper->escapeHtml(__('Conversation')) ?></span>
+    </div>
+    <?php foreach ($block->getMessages() as $message): ?>
+        <div class="admin__page-section-content">
+            <p><strong><?= $escaper->escapeHtml(ucfirst((string)$message->getData('author_type'))) ?></strong>
+                <span><?= $escaper->escapeHtml($message->getData('created_at')) ?></span></p>
+            <p><?= nl2br($escaper->escapeHtml($message->getData('message'))) ?></p>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<form action="<?= $escaper->escapeUrl($block->getUrl('support_ticket/ticket/save')) ?>"
+      method="post" id="support-ticket-form">
+    <?= $block->getBlockHtml('formkey') ?>
+    <input type="hidden" name="ticket_id" value="<?= $escaper->escapeHtmlAttr((string)$ticket->getId()) ?>"/>
+    <div class="admin__field">
+        <label class="admin__field-label" for="ticket_priority">
+            <span><?= $escaper->escapeHtml(__('Priority')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <select class="admin__control-select" name="priority" id="ticket_priority">
+                <?php foreach (['low', 'normal', 'high', 'urgent'] as $priority): ?>
+                    <option value="<?= $escaper->escapeHtmlAttr($priority) ?>"
+                        <?= $priority === $ticket->getData('priority') ? 'selected="selected"' : '' ?>>
+                        <?= $escaper->escapeHtml(ucfirst($priority)) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="admin__field">
+        <label class="admin__field-label" for="ticket_status">
+            <span><?= $escaper->escapeHtml(__('Move status to')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <select class="admin__control-select" name="status" id="ticket_status">
+                <option value="<?= $escaper->escapeHtmlAttr((string)$ticket->getData('status')) ?>">
+                    <?= $escaper->escapeHtml(ucwords(str_replace('_', ' ', (string)$ticket->getData('status')))) ?>
+                </option>
+                <?php if ($nextStatus !== null): ?>
+                    <option value="<?= $escaper->escapeHtmlAttr($nextStatus) ?>">
+                        <?= $escaper->escapeHtml(ucwords(str_replace('_', ' ', $nextStatus))) ?>
+                    </option>
+                <?php endif; ?>
+            </select>
+        </div>
+    </div>
+    <div class="admin__field">
+        <label class="admin__field-label" for="ticket_reply">
+            <span><?= $escaper->escapeHtml(__('Reply to customer')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <textarea class="admin__control-textarea" name="reply" id="ticket_reply" rows="5"
+                      maxlength="10000"></textarea>
+        </div>
+    </div>
+    <div class="admin__actions">
+        <button type="submit" class="action-primary">
+            <span><?= $escaper->escapeHtml(__('Save Ticket')) ?></span>
+        </button>
+        <a class="action-secondary" href="<?= $escaper->escapeUrl($block->getUrl('support_ticket/ticket/index')) ?>">
+            <span><?= $escaper->escapeHtml(__('Back to Tickets')) ?></span>
+        </a>
+    </div>
+</form>

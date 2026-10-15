@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MagentoTickets\SupportTicketApi\Api\Data\TicketInterface"
+                type="MagentoTickets\SupportTicketApi\Model\Data\Ticket"/>
+    <preference for="MagentoTickets\SupportTicketApi\Api\Data\TicketMessageInterface"
+                type="MagentoTickets\SupportTicketApi\Model\Data\TicketMessage"/>
+    <preference for="MagentoTickets\SupportTicketApi\Api\Data\TicketSearchResultsInterface"
+                type="MagentoTickets\SupportTicketApi\Model\Data\TicketSearchResults"/>
+    <preference for="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface"
+                type="MagentoTickets\SupportTicketApi\Model\TicketManagement"/>
+    <preference for="MagentoTickets\SupportTicketApi\Api\TicketRepositoryInterface"
+                type="MagentoTickets\SupportTicketApi\Model\TicketRepository"/>
+    <virtualType name="MagentoTickets\SupportTicketApi\Model\ResourceModel\Ticket\GridCollection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magento_tickets_support_ticket</argument>
+            <argument name="resourceModel" xsi:type="string">
+                MagentoTickets\SupportTicketApi\Model\ResourceModel\Ticket
+            </argument>
+            <argument name="identifierName" xsi:type="string">ticket_id</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="support_ticket_listing_data_source" xsi:type="string">
+                    MagentoTickets\SupportTicketApi\Model\ResourceModel\Ticket\GridCollection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

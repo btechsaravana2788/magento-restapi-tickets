@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/support-tickets" method="POST">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="create"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/support-tickets" method="GET">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/support-tickets/:ticketId" method="GET">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="get"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/support-tickets/:ticketId/replies" method="POST">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="addCustomerReply"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/support-tickets/:ticketId/status" method="PUT">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="updateStatus"/>
+        <resources>
+            <resource ref="MagentoTickets_SupportTicketApi::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/support-tickets/:ticketId/priority" method="PUT">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="updatePriority"/>
+        <resources>
+            <resource ref="MagentoTickets_SupportTicketApi::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/support-tickets/:ticketId/replies/staff" method="POST">
+        <service class="MagentoTickets\SupportTicketApi\Api\TicketManagementInterface" method="addStaffReply"/>
+        <resources>
+            <resource ref="MagentoTickets_SupportTicketApi::manage"/>
+        </resources>
+    </route>
+</routes>
